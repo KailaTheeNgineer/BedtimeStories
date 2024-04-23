@@ -5,11 +5,11 @@ import java.io.*;
 
 public class BedtimeStories {
     public static void main(String[] args) {
+
         System.out.println("Welcome to the Bedtime Story Reader!\n" +
                 "To begin, Select a Bedtime Story");
 
         Scanner myScanner = new Scanner(System.in);
-
 
         try {
             System.out.println("[1] Goldilocks and the 3 Bears\n" +
@@ -23,22 +23,26 @@ public class BedtimeStories {
             Scanner readHansel = new Scanner(hansel);
             Scanner readMary = new Scanner(mary);
             String input;
+            int lineCount = 0;
             if (bedtimeStory == 1) {
                 while (readGoldi.hasNextLine()) {
                     input = readGoldi.nextLine();
-                    System.out.println(input);
+                    System.out.println(lineCount + ". " + input);
+                    lineCount++;
                 }
                 readGoldi.close();
             } else if (bedtimeStory == 2) {
                 while (readHansel.hasNextLine()) {
                     input = readHansel.nextLine();
-                    System.out.println(input);
+                    System.out.println(lineCount + ". " + input);
+                    lineCount++;
                 }
                 readHansel.close();
             } else if (bedtimeStory == 3) {
                 while (readMary.hasNextLine()) {
                     input = readMary.nextLine();
-                    System.out.println(input);
+                    System.out.println(lineCount + ". " + input);
+                    lineCount++;
                 }
                 readMary.close();
             }
